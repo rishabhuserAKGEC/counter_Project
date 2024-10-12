@@ -30,26 +30,46 @@
 
 <body>
     <h1 id="counter">The Counter Value is :0</h1>
-    <button id="increment">Increment</button>
-    <button id="decrement">Decrement</button>
+    <button id="incrementCounter">Increment</button>
+    <button id="decrementCounter">Decrement</button>
+
+    <h1 id="factor">The Factor Value is :0</h1>
+    <button id="incrementFactor">Increment</button>
+    <button id="decrementFactor">Decrement</button>
 
     <script>
         let counterValue = 0;
-        const counterDisplay = document.getElementById("counter");
-        const incrementButton = document.getElementById("increment");
-        const decrementButton = document.getElementById("decrement");
+        let factorValue =0;
 
-        incrementButton.addEventListener('click', () => {
-            counterValue++;
+        const counterDisplay = document.getElementById("counter");
+        const factorDisplay =document.getElementById('factor');
+
+        const incrementCounterButton = document.getElementById("incrementCounter");
+        const decrementCounterButton = document.getElementById("decrementCounter");
+
+        const incrementFactorButton = document.getElementById("incrementFactor");
+        const decrementFactorButton = document.getElementById("decrementFactor");
+
+
+        incrementCounterButton.addEventListener('click', () => {
+            counterValue+=factorValue;
             counterDisplay.textContent = "The Counter Value is :"+counterValue
         });
 
-        decrementButton.addEventListener('click',()=>{
-            counterValue--;
+        decrementCounterButton.addEventListener('click',()=>{
+            counterValue-=factorValue;
             counterDisplay.textContent="The Counter Value is :"+counterValue;
         });
 
+        incrementFactorButton.addEventListener('click',()=>{
+            factorValue++;
+            factorDisplay.textContent="The Factor Value is :"+factorValue;
+        })
 
+        decrementFactorButton.addEventListener('click',()=>{
+            factorValue--;
+            factorDisplay.textContent="The Factor Value is :"+factorValue;
+        })
     </script>
 </body>
 
