@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        button{
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        } 
+    </style>
+</head>
+
+<body>
+    <h1 id="counter">The Counter Value is :0</h1>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+
+    <script>
+        let counterValue = 0;
+        const counterDisplay = document.getElementById("counter");
+        const incrementButton = document.getElementById("increment");
+        const decrementButton = document.getElementById("decrement");
+
+        incrementButton.addEventListener('click', () => {
+            counterValue++;
+            counterDisplay.textContent = "The Counter Value is :"+counterValue
+        });
+
+        decrementButton.addEventListener('click',()=>{
+            counterValue--;
+            counterDisplay.textContent="The Counter Value is :"+counterValue;
+        });
+
+
+    </script>
+</body>
+
+</html>
